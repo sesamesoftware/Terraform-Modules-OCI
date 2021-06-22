@@ -1,3 +1,3 @@
 # Terrafom-Modules
 
-Terraform modules used by Sesame Software for Deployment
+These are terraform modules that are useful when installing Relational Junction on the OCI platform
