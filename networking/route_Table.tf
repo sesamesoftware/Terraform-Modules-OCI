@@ -1,9 +1,9 @@
 resource "oci_core_route_table" "rj-public-rt" {
-  count = var.rj_vcn_use_existing ? 0 : 1
+  count = var.vcn_use_existing ? 0 : 1
   #Required
   compartment_id = var.compartment_ocid
   vcn_id         = oci_core_vcn.rj-vcn[0].id
-  display_name   = var.rj_pub_rt_displayname
+  display_name   = var.pub_rt_displayname
 
   // Internet Gateway
   route_rules {
@@ -18,11 +18,11 @@ resource "oci_core_route_table" "rj-public-rt" {
 }
 
 resource "oci_core_route_table" "rj-private-rt" {
-  count = var.rj_vcn_use_existing ? 0 : 1
+  count = var.vcn_use_existing ? 0 : 1
   #Required
   compartment_id = var.compartment_ocid
   vcn_id         = oci_core_vcn.rj-vcn[0].id
-  display_name   = var.rj_pvt_rt_displayname
+  display_name   = var.pvt_rt_displayname
 
   // NAT Gateway
   route_rules {

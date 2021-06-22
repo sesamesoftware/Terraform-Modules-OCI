@@ -26,64 +26,64 @@ variable "compartment_ocid" {
 #         Network Specific
 #*************************************
 
-variable "rj_vcn_name" {
+variable "vcn_name" {
   default = "Relational Junction VCN"
 }
-variable "rj_subnet_public_displayname" {
+variable "subnet_public_displayname" {
   default = "Relational Junction - Public"
 }
-variable "rj_subnet_public_cidr" {
+variable "subnet_public_cidr" {
   default = "10.0.0.0/24"
 }
-variable "rj_subnet_private_displayname" {
+variable "subnet_private_displayname" {
   default = "Data Science - Private"
 }
-variable "rj_subnet_private_cidr" {
+variable "subnet_private_cidr" {
   default = "10.0.1.0/24"
 }
-variable "rj_vcn_use_existing" {
+variable "vcn_use_existing" {
   default = false
 }
-variable "rj_vcn_existing" {
+variable "vcn_existing" {
   default = ""
 }
-variable "rj_subnet_public_existing" {
+variable "subnet_public_existing" {
   default = ""
 }
-variable "rj_subnet_private_existing" {
+variable "subnet_private_existing" {
   default = ""
 }
-variable "rj_pub_subnet_dns_label" {
+variable "pub_subnet_dns_label" {
   default = ""
 }
-variable "rj_pvt_subnet_dns_label" {
+variable "pvt_subnet_dns_label" {
   default = ""
 } 
-variable "rj_IGW_displayname" {
+variable "IGW_displayname" {
   default = ""
 }
-variable "rj_vcn_cider_block" {
+variable "vcn_cider_block" {
   default = "10.0.0.0/16"
 }
-variable "rj_pvt_sl_displayname" {
+variable "pvt_sl_displayname" {
   default = ""
 }
-variable "rj_pub_sl_displayname" {
+variable "pub_sl_displayname" {
   default = ""
 }
-variable "rj_pvt_rt_displayname" {
+variable "pvt_rt_displayname" {
   default = ""
 }
-variable "rj_pub_rt_displayname" {
+variable "pub_rt_displayname" {
   default = ""
 }
-variable "rj_vcn_dns_label" {
+variable "vcn_dns_label" {
   default = ""
 }
-variable "rj_VCN_displayname" {
+variable "VCN_displayname" {
   default = ""
 }
-variable "rj_nat_displayname" {
+variable "nat_displayname" {
   default = ""
 }
 

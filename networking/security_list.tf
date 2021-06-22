@@ -1,9 +1,9 @@
 resource "oci_core_security_list" "rj-public-sl" {
-  count = var.rj_vcn_use_existing ? 0 : 1
+  count = var.vcn_use_existing ? 0 : 1
   #Required
   compartment_id = var.compartment_ocid
   vcn_id         = oci_core_vcn.rj-vcn[0].id
-  display_name   = var.rj_pub_sl_displayname
+  display_name   = var.pub_sl_displayname
   # Egress - Allow All
   egress_security_rules {
     destination      = "0.0.0.0/0"
@@ -38,11 +38,11 @@ resource "oci_core_security_list" "rj-public-sl" {
 
 
 resource "oci_core_security_list" "rj-private-sl" {
-  count = var.rj_vcn_use_existing ? 0 : 1
+  count = var.vcn_use_existing ? 0 : 1
   #Required
   compartment_id = var.compartment_ocid
   vcn_id         = oci_core_vcn.rj-vcn[0].id
-  display_name   = var.rj_pvt_sl_displayname
+  display_name   = var.pvt_sl_displayname
   # Egress - Allow All
   egress_security_rules {
     destination      = "0.0.0.0/0"
@@ -54,7 +54,7 @@ resource "oci_core_security_list" "rj-private-sl" {
   ingress_security_rules {
     #Required
     protocol    = "All"
-    source      = var.rj_vcn_cider_block
+    source      = var.vcn_cider_block
     source_type = "CIDR_BLOCK"
     stateless   = false
   }
