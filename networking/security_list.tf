@@ -14,6 +14,17 @@ resource "oci_core_security_list" "rj-public-sl" {
   }
 
   # Ingress - Allow SSH
+  for_each = [for n in networks: {
+ 
+
+      id   = n.id
+ 
+      tag = n.tag
+ 
+      mac = n.mac
+ 
+
+    }]
   ingress_security_rules {
     protocol = "6"
     source   = "0.0.0.0/0"

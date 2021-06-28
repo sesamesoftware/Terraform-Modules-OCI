@@ -1,0 +1,32 @@
+variable  networks{
+  
+  
+  default = [{
+  
+    id   = "xxxx-xx-xx-xx"
+ 
+
+    tag = "t1"
+  
+    mac = "0.0.0.0"
+ 
+  }]
+ 
+ 
+
+}
+ 
+dynamic network {
+
+for_each = [for n in networks: {
+ 
+
+      id   = n.id
+ 
+      tag = n.tag
+ 
+      mac = n.mac
+ 
+
+    }]
+}
