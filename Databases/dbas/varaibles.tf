@@ -44,8 +44,6 @@ variable "database_storage" {
   type        = string
   description = "provide value of Database Storage"
 }
-
-
 variable "database_edition" {
   type        = string
   description = "provide value of Database Edition"

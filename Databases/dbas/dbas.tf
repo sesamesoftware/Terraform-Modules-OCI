@@ -33,6 +33,3 @@ resource "oci_database_db_system" "dev_db_system" {
   domain                  = var.domain # domain should be same as subnet
   node_count              = var.database_nodecount
 } 
-output "dbConnectionString" {
-  value = ["${oci_database_db_system.dev_db_system.db_home[0].database[0].connection_strings }"]
-}

@@ -72,8 +72,7 @@ resource "oci_core_instance" "rj_instance" {
   }
   preserve_boot_volume = true
 
-  count = var.rj_enabled == true ? 1 : 0
-
+ 
 }
 
 resource "null_resource" "wallet" {
@@ -127,7 +126,3 @@ resource "null_resource" "initialize" {
   }
 }
 
-output "RJ_URL" {
-  description = "url to connect to"
-  value       = "http://${oci_core_instance.rj_instance.*.public_ip[0]}:8080/rj"
-}

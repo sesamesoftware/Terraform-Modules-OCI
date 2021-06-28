@@ -1,6 +1,5 @@
 resource "oci_analytics_analytics_instance" "analytics_instance" {
   #Required
-  count = var.oac_enabled == true ? 1 : 0
   capacity {
     #Required
     capacity_type  = var.oac_capacity_type
@@ -30,7 +29,3 @@ resource "oci_analytics_analytics_instance" "analytics_instance" {
   # }
 }
 
-output "OAC_URL" {
-  description = "url to connect to"
-  value       = var.oac_enabled ? oci_analytics_analytics_instance.analytics_instance[0].service_url : null
-}

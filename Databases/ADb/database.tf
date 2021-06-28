@@ -16,9 +16,7 @@ resource "oci_database_autonomous_database" "test_autonomous_database" {
   is_auto_scaling_enabled  = var.autonomous_database_is_auto_scaling_enabled
   license_model            = var.autonomous_database_license_model
   # whitelisted_ips = var.autonomous_database_whitelisted_ips
-  count = var.adw_enabled == true ? 1 : 0
-
-}
+  }
 
 resource "random_string" "autonomous_data_warehouse_wallet_password" {
   length  = 16
@@ -26,7 +24,7 @@ resource "random_string" "autonomous_data_warehouse_wallet_password" {
 }
 
 resource "oci_database_autonomous_database_wallet" "autonomous_data_warehouse_wallet" {
-  autonomous_database_id = oci_database_autonomous_database.test_autonomous_database[0].id
+  autonomous_database_id = oci_database_autonomous_database.test_autonomous_database.id
   password               = random_string.autonomous_data_warehouse_wallet_password.result
   base64_encode_content  = "true"
 }

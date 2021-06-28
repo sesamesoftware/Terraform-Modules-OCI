@@ -6,5 +6,5 @@ output "autonomous_data_warehouse_wallet_Location" {
 }
 output "ADW_URL" {
   description = "url to connect to"
-  value       = var.adw_enabled ? oci_database_autonomous_database.test_autonomous_database[0].connection_urls : null
+  value       = var.adw_enabled ? oci_database_autonomous_database.test_autonomous_database.connection_urls : null
 }
